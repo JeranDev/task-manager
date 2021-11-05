@@ -1,5 +1,3 @@
-// CRUD
-
 const { MongoClient, ObjectId } = require('mongodb')
 
 const connectionURL = 'mongodb://127.0.0.1:27017'
@@ -15,22 +13,18 @@ MongoClient.connect(
 
     const db = client.db(databaseName)
 
-    db.collection('users')
-      .updateOne(
-        {
-          _id: new ObjectId('61808a54fa017170a1ade26e'),
-        },
-        {
-          $set: {
-            name: 'Mike',
-          },
-        }
-      )
-      .then(result => {
-        console.log(result)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    // db.collection('users')
+    //   .deleteMany({
+    //     age: 26,
+    //   })
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log(error))
+
+    //   db.collection('tasks')
+    //     .deleteOne({
+    //       description: 'Make dinner',
+    //     })
+    //     .then(result => console.log(result))
+    //     .catch(error => console.log(error))
   }
 )
